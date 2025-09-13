@@ -8,7 +8,7 @@ advanced.
 
 ## 🟢 Beginner Level (Days 1--25) -- Build Core Skills
 
-1.  **Simple To-Do List CLI** -- Add, view, delete tasks stored in
+1.  -- Done **Simple To-Do List CLI** -- Add, view, delete tasks stored in
     SQLite.
 2.  **Student Database Manager** -- Store students' names, grades, and
     roll numbers.
