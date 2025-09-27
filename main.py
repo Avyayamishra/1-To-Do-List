@@ -1,5 +1,6 @@
 import sqlite3
 import tabulate
+import os
 
 cnxn = sqlite3.connect("data.db")
 gamo = cnxn.cursor()
@@ -13,7 +14,7 @@ CREATE TABLE IF NOT EXISTS tasks (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 """)
-gamo.commit()
+cnxn.commit()
 def createTask():
     try:
         a = input("Enter title: ")
@@ -21,8 +22,10 @@ def createTask():
         c = input("If completed (Y/N): ")
         if c == "Y":
             gamo.execute("insert into tasks(title, description, is_completed) values (?,?,?)",(a, b, "Completed"))
+            cnxn.commit()
         elif c == "N":
             gamo.execute("insert into tasks(title, description, is_completed) values (?,?,?)", (a,b,"Incomplete"))
+            cnxn.commit()
         else:
             print("Error: Invalid choice selected.")
     except Exception as e:
@@ -39,6 +42,7 @@ def deleteTask():
     try:
         x = int(input("Enter Task ID to delete: "))
         gamo.execute("delete from tasks where id = (?)", (x))
+        cnxn.commit()
     except Exception as e:
         print("Error occured: ", e)
 print("""Available options:
