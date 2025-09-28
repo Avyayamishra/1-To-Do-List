@@ -126,10 +126,6 @@ Enter your choice: 2
 4. Push to the branch (`git push origin feature/new-feature`)
 5. Create a Pull Request
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Contact
 
 For questions or suggestions, please open an issue on GitHub or contact the project maintainer.
